@@ -1,2 +1,2 @@
-# wz_22
-a project for all wz_22er
+# WZ_22
+A project for all wz_22er
