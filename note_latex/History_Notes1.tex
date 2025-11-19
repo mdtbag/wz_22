@@ -1,4 +1,4 @@
-\documentclass[12pt,a4paper]{article} % 注意：article 不支持 15pt，最大 12pt
+\documentclass[33pt,a4paper]{article} % 注意：article 不支持 15pt，最大 12pt
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{notex}
@@ -14,9 +14,10 @@
 \usepackage{pgfplots}
 \pgfplotsset{compat=1.18}
 \usepackage{ctex}
-\setCJKmainfont{Noto Sans CJK SC}
-\setCJKsansfont{Noto Sans CJK SC}
-\setCJKmonofont{Noto Sans CJK SC}
+\usepackage{fontspec}
+% \setCJKmainfont{Noto Sans CJK SC}
+% \setCJKsansfont{Noto Sans CJK SC}
+% \setCJKmonofont{Noto Sans CJK SC}
 
 \setmainfont{TeX Gyre Termes}
 
@@ -195,19 +196,49 @@
 	% \vspace*{3cm}
 	
 	% $\mathit{x1_e+d}$
+	\vspace*{3cm}
 	\begin{tikzpicture}
-		\begin{axis}
-			ybar,
-			bar swidth=20pt,
-			xlabel={类别},
-			ylabel={数值},
-			xtick={1,2,3,4},
-			xticklabels={A,B,C,D},
-			ymin=0,
-			ymax=100,
-			width=10cm,
-			height=6cm
-		\end{axis}
+	\begin{axis}[
+		ybar,
+		bar width=30pt,          % ← 修正拼写
+		xlabel={类别},
+		ylabel={数值},
+		xtick={1,2,3,4},
+		xticklabels={A,B,C,D},
+		ymin=0,
+		ymax=100,
+		width=15cm,
+		height=10cm
+	]
+	\addplot coordinates {(1,30) (2,70) (3,50) (4,90)}; % ← 添加数据
+	\end{axis}
 	\end{tikzpicture}
+
+	\vspace*{3cm}
+	\begin{center}
+	\begin{tikzpicture}
+	\begin{axis}[
+		xlabel={$x$},
+		ylabel={$y = \sin x$},
+		% grid=both,
+		minor tick num=1,
+		% major grid style={line width=.2pt,draw=gray!50},
+		% minor grid style={line width=.1pt,draw=gray!25},
+		width=12cm,
+		height=6cm,
+		domain=-2*pi:2*pi,
+		samples=200,
+		axis lines=middle,
+		enlargelimits=true,
+		xtick={-6.283,-3.1416,0,3.1416,6.283},
+		xticklabels={$-2\pi$,$-\pi$,0,$\pi$,$2\pi$},
+		ytick={-1,-0.5,0,0.5,1},
+		legend pos=north east
+	]
+	\addplot [thick, red] {sin(deg(x))};
+	\legend{$\sin x$}
+	\end{axis}
+	\end{tikzpicture}
+	\end{center}
 
 \end{document}
