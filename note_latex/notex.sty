@@ -1,0 +1,90 @@
+% notex.sty
+% Enhanced LaTeX package for note-taking (XeLaTeX + ctex)
+% Usage: \usepackage{notex}
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{notex}[2025/11/18 Enhanced Note Package]
+
+% === 基础依赖 ===
+\RequirePackage{xcolor}
+\RequirePackage{fontspec}
+\RequirePackage{datetime2}
+\RequirePackage{etoolbox}
+\RequirePackage{verbatim}
+\RequirePackage{xspace}
+\RequirePackage{kvoptions}
+
+% 兼容 natbib 的 \citep（若用户加载了 natbib 则不冲突）
+\AtBeginDocument{
+  \@ifpackageloaded{natbib}{}{
+    \providecommand{\citep}[1]{\cite{#1}}
+  }
+}
+
+% === 1. 高亮（荧光笔效果）===
+\definecolor{notex@highlight}{HTML}{FFFF66}
+\newcommand{\gl}[1]{\colorbox{notex@highlight}{#1}}
+
+% === 2. Times Roman 字体（西文）===
+\newfontfamily\notex@times{TeX Gyre Termes}[
+  NFSSFamily=notexrm,
+  Ligatures=TeX
+]
+\DeclareTextFontCommand{\rm}{\notex@times}
+
+% === 3. 安全的 \wryh：自动使用系统最佳中文字体 ===
+\IfFontExistsTF{Noto Sans CJK SC}{
+  \newfontfamily\notex@wryh{Noto Sans CJK SC}
+  \DeclareTextFontCommand{\wryh}{\notex@wryh}
+}{
+  \IfFontExistsTF{WenQuanYi Micro Hei}{
+    \newfontfamily\notex@wryh{WenQuanYi Micro Hei}
+    \DeclareTextFontCommand{\wryh}{\notex@wryh}
+  }{
+    % 最后回退：\wryh 不改变字体（避免报错）
+    \newcommand{\wryh}[1]{#1}
+  }
+}
+
+% === 4. 当前时间（年月日 时分秒）===
+
+
+
+% === 5. TODO 标记（红色显眼）===
+\definecolor{notex@todo}{rgb}{0.8,0.1,0.1}
+\newcommand{\td}[1]{%
+  {\color{notex@todo}\textbf{[TODO: #1]}\xspace}%
+}
+
+% === 6. 灰色注释（草稿/说明）===
+\definecolor{notex@comment}{gray}{0.5}
+\newcommand{\zz}[1]{%
+  {\small\color{notex@comment}#1\xspace}%
+}
+
+% === 7. 行内代码 ===
+\definecolor{notex@codebg}{gray}{0.95}
+\newcommand{\code}[1]{%
+  \colorbox{notex@codebg}{\texttt{#1}}%
+}
+
+% === 8. 居中代码块（独立段落）===
+\newenvironment{cc}{%
+  \par\medskip
+  \centering
+  \ttfamily
+  \color{black}
+  \setlength{\fboxsep}{4pt}%
+  \colorbox{notex@codebg}\bgroup\ignorespaces
+}{%
+  \unskip\egroup
+  \par\medskip
+}
+
+% === 9. 当前文件名（仅 basename）===
+\newcommand{\thisfile}{%
+  \filename@parse{\jobname}%
+  \filename@base.tex%
+}
+
+\endinput
