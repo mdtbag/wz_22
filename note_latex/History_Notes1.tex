@@ -11,6 +11,8 @@
 \usepackage{xcolor}
 \usepackage[justification=centering]{caption}
 \usepackage{makecell,rotating,multirow,diagbox}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
 \usepackage{ctex}
 \setCJKmainfont{Noto Sans CJK SC}
 \setCJKsansfont{Noto Sans CJK SC}
@@ -193,6 +195,19 @@
 	% \vspace*{3cm}
 	
 	% $\mathit{x1_e+d}$
-	
+	\begin{tikzpicture}
+		\begin{axis}
+			ybar,
+			bar swidth=20pt,
+			xlabel={类别},
+			ylabel={数值},
+			xtick={1,2,3,4},
+			xticklabels={A,B,C,D},
+			ymin=0,
+			ymax=100,
+			width=10cm,
+			height=6cm
+		\end{axis}
+	\end{tikzpicture}
 
 \end{document}
