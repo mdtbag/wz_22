@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2025.11.17)  20 NOV 2025 09:08
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2025.11.17)  20 NOV 2025 09:14
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -976,10 +976,10 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 Here is how much of TeX's memory you used:
  36385 strings out of 477756
  947614 string characters out of 5843517
- 1387764 words of memory out of 5000000
+ 1387765 words of memory out of 5000000
  56390 multiletter control sequences out of 15000+600000
  480201 words of font info for 124 fonts, out of 8000000 for 9000
  264 hyphenation exceptions out of 8191
  100i,15n,117p,770b,2203s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on History_Notes1.xdv (7 pages, 64720 bytes).
+Output written on History_Notes1.xdv (7 pages, 64716 bytes).
