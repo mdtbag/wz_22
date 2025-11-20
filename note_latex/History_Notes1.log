@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2025.11.17)  20 NOV 2025 09:14
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2025.11.17)  20 NOV 2025 13:28
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -8,8 +8,8 @@ entering extended mode
 LaTeX2e <2021-11-15> patch level 1
 L3 programming layer <2022-01-21> (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2021/10/04 v1.4n Standard LaTeX document class
-(/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo
-File: size10.clo 2021/10/04 v1.4n Standard LaTeX file (size option)
+(/usr/share/texlive/texmf-dist/tex/latex/base/size12.clo
+File: size12.clo 2021/10/04 v1.4n Standard LaTeX file (size option)
 )
 \c@part=\count181
 \c@section=\count182
@@ -668,8 +668,6 @@ File: ctex-scheme-chinese.def 2021/12/12 v2.5.8 Chinese scheme for generic (CTEX
 File: ctex-name-utf8.cfg 2021/12/12 v2.5.8 Caption with encoding UTF-8 (CTEX)
 )) (/usr/share/texlive/texmf-dist/tex/latex/tools/indentfirst.sty
 Package: indentfirst 1995/11/23 v1.03 Indent first paragraph (DPC)
-) (/usr/share/texlive/texmf-dist/tex/latex/ctex/ctex-c5size.clo
-File: ctex-c5size.clo 2021/12/12 v2.5.8 c5size option (CTEX)
 ) (/usr/share/texlive/texmf-dist/tex/latex/ctex/fontset/ctex-fontset-fandol.def
 File: ctex-fontset-fandol.def 2021/12/12 v2.5.8 Fandol fonts definition (CTEX)
 
@@ -766,12 +764,7 @@ Package: enumitem 2019/06/20 v3.9 Customized lists
 \enit@inbox=\box75
 \enit@count@id=\count345
 \enitdp@description=\count346
-)
-
-LaTeX Warning: Unused global option(s):
-    [33pt].
-
-(./History_Notes1.aux)
+) (./History_Notes1.aux)
 \openout1 = `History_Notes1.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 45.
@@ -871,12 +864,12 @@ Package pgfplots notification 'compat/show suggested version=true': document has
 * \topmargin=-23.91173pt
 * \headheight=12.0pt
 * \headsep=25.0pt
-* \topskip=10.0pt
+* \topskip=12.0pt
 * \footskip=30.0pt
-* \marginparwidth=57.0pt
-* \marginparsep=11.0pt
+* \marginparwidth=35.0pt
+* \marginparsep=10.0pt
 * \columnsep=10.0pt
-* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
+* \skip\footins=10.8pt plus 4.0pt minus 2.0pt
 * \hoffset=0.0pt
 * \voffset=0.0pt
 * \mag=1000
@@ -893,11 +886,12 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 LaTeX Font Info:    Trying to load font information for U+msb on input line 47.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) (./History_Notes1.toc)
+)
+No file History_Notes1.toc.
 \tf@toc=\write4
 \openout4 = `History_Notes1.toc'.
 
- [1
+[1
 
 ]
 File: /home/zqj/Downloads/image-removebg-preview.png Graphic file (type bmp)
@@ -907,10 +901,10 @@ File: /home/zqj/Downloads/image-removebg-preview.png Graphic file (type bmp)
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 31.04478pt, for example:
-(fancyhdr)                \setlength{\headheight}{31.04478pt}.
+(fancyhdr)                Make it at least 32.10861pt, for example:
+(fancyhdr)                \setlength{\headheight}{32.10861pt}.
 (fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-19.04478pt}.
+(fancyhdr)                \addtolength{\topmargin}{-20.10861pt}.
 
 LaTeX Font Info:    Trying to load font information for U+euf on input line 60.
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/ueuf.fd
@@ -923,10 +917,10 @@ File: /home/zqj/Downloads/image-removebg-preview.png Graphic file (type bmp)
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 31.04478pt, for example:
-(fancyhdr)                \setlength{\headheight}{31.04478pt}.
+(fancyhdr)                Make it at least 32.10861pt, for example:
+(fancyhdr)                \setlength{\headheight}{32.10861pt}.
 (fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-19.04478pt}.
+(fancyhdr)                \addtolength{\topmargin}{-20.10861pt}.
 
 [3]
 File: /home/zqj/Downloads/image-removebg-preview.png Graphic file (type bmp)
@@ -934,10 +928,10 @@ File: /home/zqj/Downloads/image-removebg-preview.png Graphic file (type bmp)
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 31.04478pt, for example:
-(fancyhdr)                \setlength{\headheight}{31.04478pt}.
+(fancyhdr)                Make it at least 32.10861pt, for example:
+(fancyhdr)                \setlength{\headheight}{32.10861pt}.
 (fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-19.04478pt}.
+(fancyhdr)                \addtolength{\topmargin}{-20.10861pt}.
 
 [4]
 File: /home/zqj/Downloads/image-removebg-preview.png Graphic file (type bmp)
@@ -945,10 +939,10 @@ File: /home/zqj/Downloads/image-removebg-preview.png Graphic file (type bmp)
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 31.04478pt, for example:
-(fancyhdr)                \setlength{\headheight}{31.04478pt}.
+(fancyhdr)                Make it at least 32.10861pt, for example:
+(fancyhdr)                \setlength{\headheight}{32.10861pt}.
 (fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-19.04478pt}.
+(fancyhdr)                \addtolength{\topmargin}{-20.10861pt}.
 
 [5]
 File: /home/zqj/Downloads/image-removebg-preview.png Graphic file (type bmp)
@@ -956,30 +950,187 @@ File: /home/zqj/Downloads/image-removebg-preview.png Graphic file (type bmp)
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 31.04478pt, for example:
-(fancyhdr)                \setlength{\headheight}{31.04478pt}.
+(fancyhdr)                Make it at least 32.10861pt, for example:
+(fancyhdr)                \setlength{\headheight}{32.10861pt}.
 (fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-19.04478pt}.
+(fancyhdr)                \addtolength{\topmargin}{-20.10861pt}.
 
 [6]
-File: /home/zqj/Downloads/image-removebg-preview.png Graphic file (type bmp)
-</home/zqj/Downloads/image-removebg-preview.png>
+Missing character: There is no x ("78) in font nullfont!
+Missing character: There is no l ("6C) in font nullfont!
+Missing character: There is no a ("61) in font nullfont!
+Missing character: There is no b ("62) in font nullfont!
+Missing character: There is no e ("65) in font nullfont!
+Missing character: There is no l ("6C) in font nullfont!
+Missing character: There is no = ("3D) in font nullfont!
+Missing character: There is no k ("6B) in font nullfont!
+Missing character: There is no l ("6C) in font nullfont!
+Missing character: There is no y ("79) in font nullfont!
+Missing character: There is no l ("6C) in font nullfont!
+Missing character: There is no a ("61) in font nullfont!
+Missing character: There is no b ("62) in font nullfont!
+Missing character: There is no e ("65) in font nullfont!
+Missing character: There is no l ("6C) in font nullfont!
+Missing character: There is no = ("3D) in font nullfont!
+Missing character: There is no w ("77) in font nullfont!
+Missing character: There is no h ("68) in font nullfont!
+Missing character: There is no a ("61) in font nullfont!
+Missing character: There is no t ("74) in font nullfont!
+Missing character: There is no c ("63) in font nullfont!
+Missing character: There is no a ("61) in font nullfont!
+Missing character: There is no n ("6E) in font nullfont!
+Missing character: There is no i ("69) in font nullfont!
+Missing character: There is no s ("73) in font nullfont!
+Missing character: There is no a ("61) in font nullfont!
+Missing character: There is no y ("79) in font nullfont!
+Missing character: There is no w ("77) in font nullfont!
+Missing character: There is no i ("69) in font nullfont!
+Missing character: There is no d ("64) in font nullfont!
+Missing character: There is no t ("74) in font nullfont!
+Missing character: There is no h ("68) in font nullfont!
+Missing character: There is no = ("3D) in font nullfont!
+Missing character: There is no 1 ("31) in font nullfont!
+Missing character: There is no 5 ("35) in font nullfont!
+Missing character: There is no h ("68) in font nullfont!
+Missing character: There is no e ("65) in font nullfont!
+Missing character: There is no i ("69) in font nullfont!
+Missing character: There is no g ("67) in font nullfont!
+Missing character: There is no h ("68) in font nullfont!
+Missing character: There is no t ("74) in font nullfont!
+Missing character: There is no = ("3D) in font nullfont!
+Missing character: There is no 1 ("31) in font nullfont!
+Missing character: There is no 0 ("30) in font nullfont!
+Missing character: There is no d ("64) in font nullfont!
+Missing character: There is no o ("6F) in font nullfont!
+Missing character: There is no m ("6D) in font nullfont!
+Missing character: There is no a ("61) in font nullfont!
+Missing character: There is no i ("69) in font nullfont!
+Missing character: There is no n ("6E) in font nullfont!
+Missing character: There is no = ("3D) in font nullfont!
+Missing character: There is no - ("2D) in font nullfont!
+Missing character: There is no 2 ("32) in font nullfont!
+Missing character: There is no * ("2A) in font nullfont!
+Missing character: There is no p ("70) in font nullfont!
+Missing character: There is no i ("69) in font nullfont!
+Missing character: There is no : ("3A) in font nullfont!
+Missing character: There is no 2 ("32) in font nullfont!
+Missing character: There is no * ("2A) in font nullfont!
+Missing character: There is no p ("70) in font nullfont!
+Missing character: There is no i ("69) in font nullfont!
+Missing character: There is no s ("73) in font nullfont!
+Missing character: There is no a ("61) in font nullfont!
+Missing character: There is no m ("6D) in font nullfont!
+Missing character: There is no p ("70) in font nullfont!
+Missing character: There is no l ("6C) in font nullfont!
+Missing character: There is no e ("65) in font nullfont!
+Missing character: There is no s ("73) in font nullfont!
+Missing character: There is no = ("3D) in font nullfont!
+Missing character: There is no 5 ("35) in font nullfont!
+Missing character: There is no 0 ("30) in font nullfont!
+Missing character: There is no 0 ("30) in font nullfont!
+Missing character: There is no x ("78) in font nullfont!
+Missing character: There is no t ("74) in font nullfont!
+Missing character: There is no i ("69) in font nullfont!
+Missing character: There is no c ("63) in font nullfont!
+Missing character: There is no k ("6B) in font nullfont!
+Missing character: There is no = ("3D) in font nullfont!
+Missing character: There is no - ("2D) in font nullfont!
+Missing character: There is no 6 ("36) in font nullfont!
+Missing character: There is no . ("2E) in font nullfont!
+Missing character: There is no 2 ("32) in font nullfont!
+Missing character: There is no 8 ("38) in font nullfont!
+Missing character: There is no , ("2C) in font nullfont!
+Missing character: There is no - ("2D) in font nullfont!
+Missing character: There is no 3 ("33) in font nullfont!
+Missing character: There is no . ("2E) in font nullfont!
+Missing character: There is no 1 ("31) in font nullfont!
+Missing character: There is no 4 ("34) in font nullfont!
+Missing character: There is no , ("2C) in font nullfont!
+Missing character: There is no 0 ("30) in font nullfont!
+Missing character: There is no , ("2C) in font nullfont!
+Missing character: There is no 3 ("33) in font nullfont!
+Missing character: There is no . ("2E) in font nullfont!
+Missing character: There is no 1 ("31) in font nullfont!
+Missing character: There is no 4 ("34) in font nullfont!
+Missing character: There is no , ("2C) in font nullfont!
+Missing character: There is no 6 ("36) in font nullfont!
+Missing character: There is no . ("2E) in font nullfont!
+Missing character: There is no 2 ("32) in font nullfont!
+Missing character: There is no 8 ("38) in font nullfont!
+Missing character: There is no x ("78) in font nullfont!
+Missing character: There is no t ("74) in font nullfont!
+Missing character: There is no i ("69) in font nullfont!
+Missing character: There is no c ("63) in font nullfont!
+Missing character: There is no k ("6B) in font nullfont!
+Missing character: There is no l ("6C) in font nullfont!
+Missing character: There is no a ("61) in font nullfont!
+Missing character: There is no b ("62) in font nullfont!
+Missing character: There is no e ("65) in font nullfont!
+Missing character: There is no l ("6C) in font nullfont!
+Missing character: There is no s ("73) in font nullfont!
+Missing character: There is no = ("3D) in font nullfont!
+Missing character: There is no y ("79) in font nullfont!
+Missing character: There is no t ("74) in font nullfont!
+Missing character: There is no i ("69) in font nullfont!
+Missing character: There is no c ("63) in font nullfont!
+Missing character: There is no k ("6B) in font nullfont!
+Missing character: There is no = ("3D) in font nullfont!
+Missing character: There is no - ("2D) in font nullfont!
+Missing character: There is no 2 ("32) in font nullfont!
+Missing character: There is no , ("2C) in font nullfont!
+Missing character: There is no - ("2D) in font nullfont!
+Missing character: There is no 1 ("31) in font nullfont!
+Missing character: There is no , ("2C) in font nullfont!
+Missing character: There is no 0 ("30) in font nullfont!
+Missing character: There is no , ("2C) in font nullfont!
+Missing character: There is no 1 ("31) in font nullfont!
+Missing character: There is no , ("2C) in font nullfont!
+Missing character: There is no 2 ("32) in font nullfont!
+Missing character: There is no l ("6C) in font nullfont!
+Missing character: There is no e ("65) in font nullfont!
+Missing character: There is no g ("67) in font nullfont!
+Missing character: There is no e ("65) in font nullfont!
+Missing character: There is no n ("6E) in font nullfont!
+Missing character: There is no d ("64) in font nullfont!
+Missing character: There is no p ("70) in font nullfont!
+Missing character: There is no o ("6F) in font nullfont!
+Missing character: There is no s ("73) in font nullfont!
+Missing character: There is no e ("65) in font nullfont!
+Missing character: There is no = ("3D) in font nullfont!
+Missing character: There is no n ("6E) in font nullfont!
+Missing character: There is no o ("6F) in font nullfont!
+Missing character: There is no r ("72) in font nullfont!
+Missing character: There is no t ("74) in font nullfont!
+Missing character: There is no h ("68) in font nullfont!
+Missing character: There is no e ("65) in font nullfont!
+Missing character: There is no a ("61) in font nullfont!
+Missing character: There is no s ("73) in font nullfont!
+Missing character: There is no t ("74) in font nullfont!
+)
+Runaway argument?
+ \end {axis} \par \end {tikzpicture} \par \end {center} \par \end {do\ETC.
+! File ended while scanning use of \pgfplots@addplotimpl@expression@curly.
+<inserted text> 
+                \par 
+<*> ...Desktop/wz_22/note_latex/History_Notes1.tex
+                                                  
+I suspect you have forgotten a `}', causing me
+to read past where you wanted me to stop.
+I'll try to recover; but if the error is serious,
+you'd better type `E' or `X' now and fix your file.
 
+! Emergency stop.
+<*> ...Desktop/wz_22/note_latex/History_Notes1.tex
+                                                  
+*** (job aborted, no legal \end found)
 
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 31.04478pt, for example:
-(fancyhdr)                \setlength{\headheight}{31.04478pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-19.04478pt}.
-
-[7] (./History_Notes1.aux) ) 
+ 
 Here is how much of TeX's memory you used:
- 36385 strings out of 477756
- 947614 string characters out of 5843517
- 1387765 words of memory out of 5000000
- 56390 multiletter control sequences out of 15000+600000
- 480201 words of font info for 124 fonts, out of 8000000 for 9000
+ 36349 strings out of 477756
+ 945639 string characters out of 5843517
+ 1382907 words of memory out of 5000000
+ 56377 multiletter control sequences out of 15000+600000
+ 479213 words of font info for 107 fonts, out of 8000000 for 9000
  264 hyphenation exceptions out of 8191
- 100i,15n,117p,770b,2203s stack positions out of 5000i,500n,10000p,200000b,80000s
-
-Output written on History_Notes1.xdv (7 pages, 64716 bytes).
+ 100i,15n,117p,770b,2205s stack positions out of 5000i,500n,10000p,200000b,80000s
+Output written on History_Notes1.xdv (6 pages, 22684 bytes).

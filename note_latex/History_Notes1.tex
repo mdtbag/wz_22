@@ -1,4 +1,4 @@
-\documentclass[33pt,a4paper]{article} % 注意：article 不支持 15pt，最大 12pt
+\documentclass[12pt,a4paper]{article} % 注意：article 不支持 15pt，最大 12pt
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{notex}
@@ -222,16 +222,13 @@
 	\begin{axis}[
 		xlabel={$x$},
 		ylabel={$y = \sin x$},
-		% grid=both,
 		minor tick num=1,
-		% major grid style={line width=.2pt,draw=gray!50},
-		% minor grid style={line width=.1pt,draw=gray!25},
 		width=12cm,
 		height=6cm,
 		domain=-2*pi:2*pi,
 		samples=200,
 		axis lines=middle,
-		% enlargelimits=true,
+		enlargelimits=true,
 		xtick={-6.283,-3.1416,0,3.1416,6.283},
 		xticklabels={$-2\pi$,$-\pi$,0,$\pi$,$2\pi$},
 		ytick={-1,-0.5,0,0.5,1},
@@ -241,6 +238,26 @@
 	\legend{$\sin x$}
 	\end{axis}
 	\end{tikzpicture}
+	\end{center}
+
+	\begin{center}
+		\begin{tikzpicture}
+			\begin{axis}
+				xlabel={kl}
+				ylabel={what\ can\ i\ say}
+				width=15
+				height=10
+				domain=-2*pi:2*pi
+				samples=500
+				xtick=-6.28,-3.14,0,3.14,6.28
+				xticklabels={$2\pi,-\pi,0,\pi,2\pi$}
+				ytick={-2,-1,0,1,2}
+				legendpose=north east
+				\addplot[thick,red] {cos(x)}
+			\end{axis}
+			
+		\end{tikzpicture}
+		
 	\end{center}
 
 \end{document}
