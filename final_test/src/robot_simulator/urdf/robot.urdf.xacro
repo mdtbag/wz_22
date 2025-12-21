@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="robot_system">
+
+  <!-- ================ 材料定义 ================ -->
+  <material name="robot_blue">
+    <color rgba="0.2 0.4 0.8 1.0"/>
+  </material>
+  <material name="gimbal_red">
+    <color rgba="1.0 0.2 0.2 1.0"/>
+  </material>
+  <material name="dark_grey">
+    <color rgba="0.3 0.3 0.3 1.0"/>
+  </material>
+
+  <!-- ================ 机器人结构 ================ -->
+  <!-- 底盘 base_link -->
+  <link name="base_link">
+    <visual>
+      <geometry>
+        <!-- 车体：长方体 -->
+        <box size="0.6 0.4 0.16"/>
+      </geometry>
+      <origin xyz="0 0 0.1" rpy="0 0 0"/>
+      <material name="robot_blue"/>
+    </visual>
+    <!-- 左轮 -->
+    <visual>
+      <geometry>
+        <box size="0.5 0.05 0.1"/>
+      </geometry>
+      <origin xyz="0 0.225 0.05" rpy="0 0 0"/>
+      <material name="dark_grey"/>
+    </visual>
+    <!-- 右轮 -->
+    <visual>
+      <geometry>
+        <box size="0.5 0.05 0.1"/>
+      </geometry>
+      <origin xyz="0 -0.225 0.05" rpy="0 0 0"/>
+      <material name="dark_grey"/>
+    </visual>
+  </link>
+
+  <!-- 云台 gimbal_link -->
+  <link name="gimbal_link">
+    <visual>
+      <geometry>
+        <!-- 炮塔底座：八边形近似为圆柱体 -->
+        <cylinder length="0.12" radius="0.15"/>
+      </geometry>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <material name="robot_blue"/>
+    </visual>
+    <!-- 炮管 -->
+    <visual>
+      <geometry>
+        <cylinder length="0.4" radius="0.03"/>
+      </geometry>
+      <origin xyz="0.2 0 0" rpy="0 1.5708 0"/>
+      <material name="gimbal_red"/>
+    </visual>
+    <!-- 炮管基座 -->
+    <visual>
+      <geometry>
+        <box size="0.1 0.08 0.08"/>
+      </geometry>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <material name="gimbal_red"/>
+    </visual>
+  </link>
+
+  <!-- base_link 到 gimbal_link 的关节 -->
+  <joint name="base_to_gimbal" type="revolute">
+    <parent link="base_link"/>
+    <child link="gimbal_link"/>
+    <origin xyz="0 0 0.24" rpy="0 0 0"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-3.14159" upper="3.14159" effort="10.0" velocity="3.0"/>
+  </joint>
+
+</robot>

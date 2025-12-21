@@ -1,0 +1,6 @@
+# Request
+string hit_mode        # "positive" 或 "passive"
+---
+# Response
+bool success       # 切换是否成功
+string message     # 返回消息

@@ -1,0 +1,14 @@
+# Goal - 回收目标的位置（world 坐标系）
+float64 target_x
+float64 target_y
+---
+# Result - 回收结果
+bool success              # 回收是否成功
+string message            # 结果消息
+float64 collection_time   # 回收耗时（秒）
+---
+# Feedback - 实时反馈
+float64 distance          # 与目标的当前距离
+float64 micro_robot_x     # 微型机器人当前 x 坐标
+float64 micro_robot_y     # 微型机器人当前 y 坐标
+string status             # 当前状态描述

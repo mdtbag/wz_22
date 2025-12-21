@@ -1,0 +1,22 @@
+simulator_node:
+  ros__parameters:
+    # 目标初始位置 (相对于world坐标系中心)
+    target_initial_x: 2.0
+    target_initial_y: 0.0
+    
+    # 目标运动速度 (m/s)
+    target_velocity_x: 0.0
+    target_velocity_y: 1.0
+    
+    # 目标运动范围（以world为中心的半边界）
+    target_movement_range_x: 4.0
+    target_movement_range_y: 4.0
+    
+    # 弹丸速度 (m/s)
+    bullet_speed: 20.0
+    
+    # 击中判定阈值 (m)
+    hit_threshold: 0.25
+    
+    # 目标停止所需的击中次数
+    hit_count_threshold: 3

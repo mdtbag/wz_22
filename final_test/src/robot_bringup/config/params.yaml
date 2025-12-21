@@ -1,0 +1,17 @@
+robot_tracker:
+  ros__parameters:
+    frequency: 100.0
+    dt: 0.01
+    static_velocity_threshold: 0.1
+    static_time_threshold: 2.0
+
+robot_solver:
+  ros__parameters:
+    bullet_speed: 20.0
+    hit_mode: "positive"
+    fire_angle_threshold_deg: 2.0
+    fire_cooldown_sec: 0.2
+
+robot_controller:
+  ros__parameters:
+    micro_robot_speed: 3.0
