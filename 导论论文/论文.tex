@@ -1,0 +1,132 @@
+\documentclass[10pt]{ctexart}
+\usepackage{amsmath}
+\usepackage{tikz}
+\usepackage{multirow} % 确保导言区已加载
+\usepackage{siunitx}
+\usepackage{array}     % 支持调整行高
+\usepackage{caption}   % 更好的标题控制（可选）
+\usepackage[UTF8]{ctex}
+\setCJKmainfont[
+  BoldFont = Noto Serif CJK SC Bold,
+  ItalicFont = Noto Serif CJK SC
+]{Noto Serif CJK SC}
+
+\usepackage[a3paper,margin=3.5cm]{geometry}
+\usepackage{setspace}
+\usepackage{titlesec}
+\usepackage{graphicx} % ← 别忘了加载 graphicx！
+\usepackage{hyperref}
+\usepackage{enumerate}
+
+\onehalfspacing
+\setlength{\parindent}{2em}
+\setlength{\parskip}{0pt}
+
+\titleformat{\section}{\bfseries\Large\centering}{\thesection}{1em}{}
+\titleformat{\subsection}{\bfseries\normalsize}{\thesubsection}{0.8em}{}
+
+\hypersetup{colorlinks=true, linkcolor=black, citecolor=black, urlcolor=black}
+% ===== 题目与作者信息（自行修改） =====
+\title{{\texttt{历史笔记}}\\\textbf{中国抗日战争}}
+\author{%
+  % 湖南大学\quad 机械与运载工程学院\\
+  705\quad 周全景 
+}
+\date{\today}
+
+\begin{document}
+\maketitle
+\section{背景}
+近代日本对中国的侵略，1894年甲午战争即是开端
+$$
+\text{中国抗日战争}
+\left\{
+\begin{array}{l}
+\text{九一八事变，日本}\begin{cases}
+  \text{资本主义}\rightarrow\text{金融危机}\rightarrow\text{对外扩张}\rightarrow\text{金融危机}\xrightarrow{\text{资源有限}}\text{以战养战} \\
+  \text{落后性}
+\end{cases} \\
+\text{华北事变} \\
+\text{七七事变,急剧向关内增兵} \\
+\text{八一三事变}
+\end{array}
+\right\}
+\text{日本总兵力不超过一百万，然而武器装备领先很多}
+$$
+\\
+\quad\quad19361212，西安事变，国民党开始联共抗日
+
+\section{国民党领导抗日战争为何不能取得胜利}
+\subsection{正面战场}
+\begin{itemize}
+  \item 战略防御阶段以国军为主要作战对象
+  \item 国民党军正面战场担负主要作战任务，例子：淞沪会战
+        \begin{figure}[htbp]
+          \centering
+          \includegraphics[width=0.8\textwidth]{沪淞会战.jpg}
+          \caption{沪淞会战}
+          \label{fig:example}
+        \end{figure}
+\end{itemize}
+
+
+\subsection{战略撤退：以空间换时间}
+  \begin{itemize}
+    \item 工业，企业，学校迁移到内地
+    \item 焦土政策$
+        \left\{
+        \begin{array}{l}
+        \text{花园口决堤} \\
+        \text{193811文夕大火}
+        \end{array}
+        \right\}
+        \textbf{依托军队而非普通老百姓}
+        $
+  \end{itemize}
+
+\subsection{国际援助}
+\begin{itemize}
+  \item 英法忙于欧洲战场，慕尼黑协定
+  \item 美国中立，售卖军火、物资
+  \item 苏联支持中国，为维护国土安全
+\end{itemize}
+
+\subsection{战略相持阶段：分共、反共}
+\begin{itemize}
+  \item 日本对国民党：政治诱降为主，军事打击为辅
+  \item 国民党：重申持久抗战，但是内外政策发生重大变化，1939.1，“回归卢沟桥事变前状态”，“防共委员会”，1940皖南事变
+\end{itemize}
+
+\subsection{国民党内部的腐化（自上而下）}
+嫡系部队大为发展，非中央军饱受打压和歧视。
+
+\textbf{非中央军叛逃，成为伪军，对抗共产党游击队}
+
+\textbf{只考虑自己的军队（地位，权力，财富之源）而无心抗日（以汤恩伯为代表）}
+
+\subsection{国民党军的蜕化}
+
+\begin{table}[h!]
+\centering
+\caption{具体体现}
+\label{tab:example}
+\renewcommand{\arraystretch}{1.4}  % ← 增大行高（1.4倍）
+\small % 或 \normalsize（默认），甚至 \large（慎用）
+\begin{tabular}{|>{\raggedright\arraybackslash}p{3.5cm}|>{\raggedright\arraybackslash}p{3cm}|>{\raggedright\arraybackslash}p{5cm}|}
+\hline
+\multicolumn{2}{|c|}{\textbf{对象}} & \textbf{缺陷} \\
+\hline
+\multirow{3}{=}{军官} & 非中央军 & 非中央军高级将领是军阀，缺少军事素质，作战时往往保存实力，缺乏协同意识。 \\
+\cline{2-3}
+& 中央军 & 中央军高级将领多由黄埔军校短期培训出身，实战经验不足，指挥能力有限。 \\
+\hline
+\multicolumn{2}{|l|}{士兵} & 来源于强制征兵，待遇极差，食物短缺，许多士兵营养不良，士气低落，逃亡现象严重。 \\
+\hline
+\end{tabular}
+\end{table}
+\subsection{国民党经济无能}
+特别是自从广州被日本占领之后，物价飞涨，财政赤字上涨。然而\textbf{官僚资本急剧膨胀}
+\subsection{国统区军民关系恶化}
+改收实物税（征收田赋，征购粮食），\textbf{按照国民党需求征收，引起农民反感}
+
+\end{document}
