@@ -1,0 +1,202 @@
+# >>> fishros initialize >>>
+source /opt/ros/humble/setup.bash
+# <<< fishros initialize <<<
+
+if [ -f ./install/setup.bash ]; then
+    source ./install/setup.bash
+fi
+
+alias rr="ros2 run"
+alias cb="colcon build"
+alias cbps="colcon build --packages-select"
+alias rl="ros2 launch"
+alias foxglove="ros2 run foxglove_bridge foxglove_bridge"
+alias c="code . && exit"
+
+rosfuc() {
+    # === 自动 source 工作空间 ===
+    local ws_root=""
+    local search="$PWD"
+    while [[ "$search" != "/" ]]; do
+        if [[ -d "$search/src" ]] && ([[ -d "$search/install" ]] || [[ -d "$search/build" ]]); then
+            ws_root="$search"
+            break
+        fi
+        search="$(dirname "$search")"
+    done
+
+    if [[ -z "$ws_root" ]]; then
+        search="$PWD"
+        while [[ "$search" != "/" ]]; do
+            if [[ -d "$search/src" ]]; then
+                ws_root="$search"
+                break
+            fi
+            search="$(dirname "$search")"
+        done
+    fi
+
+    if [[ -n "$ws_root" ]] && [[ -f "$ws_root/install/setup.bash" ]]; then
+        source "$ws_root/install/setup.bash" >/dev/null 2>&1
+        echo "💡 Sourced workspace: $(basename "$ws_root")"
+    elif ! command -v ros2 >/dev/null 2>&1; then
+        echo "❌ ROS 2 not found. Please source your environment."
+        return 1
+    fi
+
+    # === 确定搜索根目录 ===
+    local search_root="$ws_root/src"
+    [[ -z "$ws_root" ]] && search_root="$PWD"
+    [[ ! -d "$search_root" ]] && { echo "❌ Search root not found"; return 1; }
+
+    # === 全局查找所有包的 launch/ 中的 .py 文件 ===
+    local all_matches=()
+    echo "🔍 Searching for '.py' files in launch/ folders..."
+
+    while IFS= read -r -d '' pkg_dir; do
+        if [[ -f "$pkg_dir/package.xml" ]] && [[ -f "$pkg_dir/CMakeLists.txt" ]]; then
+            local pkg_name="$(basename "$pkg_dir")"
+            local launch_dir="$pkg_dir/launch"
+            if [[ -d "$launch_dir" ]]; then
+                while IFS= read -r -d '' py_file; do
+                    local rel_path="$(realpath --relative-to="$launch_dir" "$py_file")"
+                    all_matches+=("$pkg_name|$rel_path")
+                done < <(find "$launch_dir" -name "*.py" -type f -iname "*.py" -print0 2>/dev/null)
+            fi
+        fi
+    done < <(find "$search_root" -type d -print0 2>/dev/null)
+
+    # === 输出结果 ===
+    if [[ ${#all_matches[@]} -eq 0 ]]; then
+        echo "❌ No matching .py file found in any package's launch/ directory."
+        return 1
+    fi
+
+    echo "🎯 Found ${#all_matches[@]} file(s):"
+    local i=1
+    for item in "${all_matches[@]}"; do
+        IFS='|' read -r pkg file <<< "$item"
+        printf "%3d) %-25s %s\n" "$i" "[$pkg]" "$file"
+        ((i++))
+    done
+
+    read -p "Choose (1-${#all_matches[@]}): " c
+    if [[ "$c" =~ ^[0-9]+$ ]] && ((c >= 1 && c <= ${#all_matches[@]})); then
+        IFS='|' read -r pkg_name launch_file <<< "${all_matches[$((c-1))]}"
+        echo "🚀 Running: ros2 launch $pkg_name $launch_file"
+        ros2 launch "$pkg_name" "$launch_file"
+    else
+        echo "Invalid choice."
+        return 1
+    fi
+}
+
+rosrun() {
+    local current_dir="$PWD"
+
+    # === Step 1: 尝试自动 source 最近的工作空间 ===
+    local ws_root=""
+    local search="$current_dir"
+    while [[ "$search" != "/" ]]; do
+        if [[ -d "$search/src" ]] && [[ -d "$search/install" ]]; then
+            ws_root="$search"
+            break
+        fi
+        search="$(dirname "$search")"
+    done
+
+    if [[ -n "$ws_root" ]]; then
+        source "$ws_root/install/setup.bash" >/dev/null 2>&1
+        echo "💡 Sourced workspace: $(basename "$ws_root")"
+    elif ! command -v ros2 >/dev/null 2>&1; then
+        echo "❌ ROS 2 not found in PATH."
+        return 1
+    fi
+
+    # === Step 2: 在当前目录及子目录中查找所有 ROS 2 包 ===
+    local -a packages=()
+    while IFS= read -r -d '' pkg_xml; do
+        local pkg_dir="$(dirname "$pkg_xml")"
+        # 确保也有 CMakeLists.txt（ROS 2 C++ 包）
+        if [[ -f "$pkg_dir/CMakeLists.txt" ]]; then
+            local pkg_name="$(basename "$pkg_dir")"
+            packages+=("$pkg_dir|$pkg_name")
+        fi
+    done < <(find "$current_dir" -name "package.xml" -type f -print0 2>/dev/null)
+
+    if [[ ${#packages[@]} -eq 0 ]]; then
+        echo "❌ No ROS 2 packages found under $current_dir"
+        return 1
+    fi
+
+    # === Step 3: 收集所有可执行文件（优先从 install/，fallback 到 src/）===
+    local -a choices=()
+    local -A choice_map=()  # choice_map[index]="pkg|exe"
+
+    for pkg_entry in "${packages[@]}"; do
+        IFS='|' read -r pkg_dir pkg_name <<< "$pkg_entry"
+
+        local exe_list=()
+        local found_in_install=false
+
+        # 尝试从 install/ 目录找（最准确）
+        if [[ -n "$ws_root" ]] && [[ -d "$ws_root/install/$pkg_name/lib/$pkg_name" ]]; then
+            while IFS= read -r -d '' exe; do
+                exe_list+=("$(basename "$exe")")
+            done < <(find "$ws_root/install/$pkg_name/lib/$pkg_name" -maxdepth 1 -type f -executable -print0 2>/dev/null)
+            found_in_install=true
+        fi
+
+        # 如果 install 里没有（未编译），尝试从 src/*.cpp 推测（不推荐，但可用）
+        if [[ ${#exe_list[@]} -eq 0 ]]; then
+            local src_dir="$pkg_dir/src"
+            if [[ -d "$src_dir" ]]; then
+                while IFS= read -r -d '' cpp_file; do
+                    exe_list+=("$(basename "$cpp_file" .cpp)")
+                done < <(find "$src_dir" -maxdepth 1 -name "*.cpp" -type f -print0 2>/dev/null)
+            fi
+        fi
+
+        # 添加到全局选择列表
+        for exe in "${exe_list[@]}"; do
+            local display="$pkg_name/$exe"
+            choices+=("$display")
+            choice_map[${#choices[@]}]="$pkg_name|$exe|$found_in_install"
+        done
+    done
+
+    if [[ ${#choices[@]} -eq 0 ]]; then
+        echo "❌ No executables found in any package."
+        return 1
+    fi
+
+    # === Step 4: 交互选择 ===
+    if [[ ${#choices[@]} -eq 1 ]]; then
+        local selected="${choices[0]}"
+        echo "🚀 ros2 run $selected"
+        ros2 run "${selected%%/*}" "${selected##*/}"
+    else
+        echo "🎯 Found ${#choices[@]} executable(s):"
+        for i in "${!choices[@]}"; do
+            local idx=$((i + 1))
+            local pkg_exe="${choices[i]}"
+            local info="${choice_map[$idx]}"
+            IFS='|' read -r _ _ from_install <<< "$info"
+            local mark=""
+            [[ "$from_install" == "true" ]] && mark=" (installed)" || mark=" (src only)"
+            printf "%3d) %s%s\n" "$idx" "$pkg_exe" "$mark"
+        done
+
+        read -p "Choose (1-${#choices[@]}): " c
+        if [[ "$c" =~ ^[0-9]+$ ]] && ((c >= 1 && c <= ${#choices[@]})); then
+            local info="${choice_map[$c]}"
+            IFS='|' read -r pkg_name exe _ <<< "$info"
+            echo "🚀 ros2 run $pkg_name $exe"
+            ros2 run "$pkg_name" "$exe"
+        else
+            echo "❌ Invalid choice."
+            return 1
+        fi
+    fi
+}
+

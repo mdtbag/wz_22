@@ -1,2 +1,0 @@
-Invoking command in '/home/zqj/Desktop/wz_22/chapt4_ws/build/example_action_rclcpp': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/zqj/Desktop/wz_22/chapt4_ws/src/example_action_rclcpp -DCMAKE_INSTALL_PREFIX=/home/zqj/Desktop/wz_22/chapt4_ws/install/example_action_rclcpp
-Invoked command in '/home/zqj/Desktop/wz_22/chapt4_ws/build/example_action_rclcpp' returned '1': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/zqj/Desktop/wz_22/chapt4_ws/src/example_action_rclcpp -DCMAKE_INSTALL_PREFIX=/home/zqj/Desktop/wz_22/chapt4_ws/install/example_action_rclcpp
