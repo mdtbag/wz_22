@@ -1,5 +1,5 @@
 # WZ_22
-A project for all wz_22er
+A project for all WZ_22ers
 
 ## Journey starts from here
 ### ROS2 LOVER --ME
