@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<package format="3">
+    <name>turtle_chase</name>
+    <version>0.0.1</version>
+    <description>Turtle1 chases Turtle2</description>
+    <maintainer email="zqj@hnu.edu.cn">zqj</maintainer>
+    <license>Apache-2.0</license>
+
+    <buildtool_depend>ament_cmake</buildtool_depend>
+
+    
+    <depend>rclcpp</depend>
+    <depend>geometry_msgs</depend>
+    <depend>turtlesim</depend>
+
+    <export>
+        <build_type>ament_cmake</build_type>
+    </export>
+
+</package>

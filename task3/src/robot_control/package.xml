@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>robot_control</name>
+  <version>0.0.0</version>
+  <description>my ros2 all in one</description>
+
+  <maintainer email="zqj@hnu.edu.cn">zqj</maintainer>
+  <license>Apache-2.0</license>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+
+  <build_depend>rclcpp</build_depend>
+  <build_depend>rclcpp_action</build_depend>
+  <build_depend>std_msgs</build_depend>
+  <build_depend>std_srvs</build_depend>
+  <build_depend>builtin_interfaces</build_depend>
+  <build_depend>rcl_interfaces</build_depend>
+  <build_depend>rosidl_default_generators</build_depend>
+
+  <exec_depend>rclcpp</exec_depend>
+  <exec_depend>rclcpp_action</exec_depend>
+  <exec_depend>std_msgs</exec_depend>
+  <exec_depend>std_srvs</exec_depend>
+  <exec_depend>builtin_interfaces</exec_depend>
+  <exec_depend>rcl_interfaces</exec_depend>
+  <exec_depend>rosidl_default_runtime</exec_depend>
+
+  <member_of_group>rosidl_interface_packages</member_of_group>
+
+  <export>
+        <build_type>ament_cmake</build_type>
+  </export>
+
+</package>

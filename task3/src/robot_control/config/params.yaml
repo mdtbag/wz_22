@@ -1,0 +1,7 @@
+lidar_publisher:
+  ros__parameters:
+    lidar_publish_frequency: 1.0
+
+obstacle_detector:
+  ros__parameters:
+    obstacle_threshold: 0.5   
