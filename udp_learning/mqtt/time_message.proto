@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+// 包名，避免命名冲突
+package realtime;
+
+// 实时时间消息结构
+message TimeData {
+  // 时间戳（毫秒级，UTC时间）
+  int64 timestamp_ms = 1;
+  // 日期字符串（格式：YYYY-MM-DD）
+  string date = 2;
+  // 时间字符串（格式：HH:MM:SS）
+  string time = 3;
+  // 时区（可选，默认UTC+8）
+  string timezone = 4;
+}

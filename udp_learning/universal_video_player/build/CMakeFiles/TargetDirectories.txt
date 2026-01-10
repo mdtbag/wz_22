@@ -1,0 +1,3 @@
+/home/htc/hetengchun_202406050127/universal_video_player/build/CMakeFiles/UniversalVideoPlayer.dir
+/home/htc/hetengchun_202406050127/universal_video_player/build/CMakeFiles/edit_cache.dir
+/home/htc/hetengchun_202406050127/universal_video_player/build/CMakeFiles/rebuild_cache.dir
